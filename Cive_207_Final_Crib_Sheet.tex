@@ -961,55 +961,7 @@ Shear at top is 0
 \columnbreak
 
 %% COLUMN 3
-\sectiontitle{Failure Theories}
 
-% Background images with absolute positioning
-\begin{tikzpicture}[remember picture, overlay]
-\node[opacity=0.6, anchor=north west] at (0,0) {\includegraphics[width=0.80in]{image19.png}};
-\node[opacity=0.6, anchor=north east] at (7.0cm,-3cm) {\includegraphics[width=0.80in]{image20.png}};
-\node[opacity=0.6, anchor=north west] at (0, -4.5cm) {\includegraphics[width=0.80in]{image21.png}};
-\node[opacity=0.6, anchor=north east] at (7.0cm, -5.5cm) {\includegraphics[width=0.80in]{image22.png}};
-\node[opacity=1, anchor=north west] at (0cm, -7cm) {\includegraphics[width=0.80in]{image23.png}};
-\node[opacity=0.6, anchor=north east] at (7.0cm, -7cm) {\includegraphics[width=0.80in]{image24.png}};
-\end{tikzpicture}
-
-\begin{minipage}{0.95\linewidth}
-\textbf{Ductile}\\
-\vspace{-7pt}
-
-\subsectiontitle{Maximum Shearing Stress Criterion (Tresca)}
-$\tau_{\max} = \frac{1}{2}\sigma_Y$ \hspace{0.5em} (Tresca, uniaxial tension)\\
-$\tau_{\max} = \frac{1}{2}|\sigma_1 - \sigma_2|$ \hspace{0.5em} (plane stress, general)\\
-$\tau_{\max} = \frac{1}{2}\sigma_{\max}$ \hspace{0.5em} (plane stress, if $\sigma_{\min}=0$)\\
-If $\sigma_a$ and $\sigma_b$ have the same sign: $|\sigma_a| \leq \sigma_Y$ and $|\sigma_b| \leq \sigma_Y$ must hold.\\
-If $\sigma_a$ and $\sigma_b$ have opposite signs: $|\sigma_a - \sigma_b| \leq \sigma_Y$ must hold.\\
-
-\vspace{-8pt}
-
-\subsectiontitle{Maximum-Distortion-Energy Criterion (von Mises)}
-$u_d = \frac{1}{6G}(\sigma_a^2 - \sigma_a\sigma_b + \sigma_b^2)$ \hspace{0.5em} (distortion energy per unit volume)\\
-$\sigma_a^2 - \sigma_a\sigma_b + \sigma_b^2 \leq \sigma_Y^2$ \hspace{0.5em} (von Mises failure criterion)\\
-
-\vspace{-8pt}
-
-\textbf{Brittle}\\
-\vspace{-10pt}
-
-\subsectiontitle{Maximum Normal Stress Criterion}
-$|\sigma_a| \leq \sigma_U$ and $|\sigma_b| \leq \sigma_U$ \hspace{0.5em} (tension)\\
-
-\vspace{-5pt}
-
-\subsectiontitle{Maximum-Normal-Strain Criterion (Saint-Venant)}
-$|\epsilon_a| \leq \epsilon_U$ and $|\epsilon_b| \leq \epsilon_U$ \hspace{0.5em} (tension)\\
-
-\vspace{-8pt}
-
-\subsectiontitle{Mohr's Criterion}
-Draw Mohr's circles for UTS and UCS, state circle must fit inside circles.\\
-Can add torsion test circle centered at origin with radius equal to $\tau_U$.\\
-Enveloppe or tangent line around circles.\\
-\end{minipage}
 
 
 \begin{tikzpicture}[remember picture, overlay]
