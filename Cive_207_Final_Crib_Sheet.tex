@@ -995,16 +995,75 @@ Shear at top is 0
 \end{tikzpicture}
 \vspace{1cm}
 \begin{center}
-\includegraphics[width=2.5in]{image31.png}
+\includegraphics[width=0.5in]{image31.png}
 \end{center}
 same principle for centroid
 \begin{center}
-\includegraphics[width=1.5in]{image32.png}
+\includegraphics[width=0.5in]{image32.png}
 \end{center}
 \begin{center}
-\includegraphics[width=1.5in]{image33.png}
+\includegraphics[width=0.5in]{image33.png}
 \end{center}
 
+\subsectiontitle{Transmission Shaft Design}
+
+\[ \tau_{\max} = \frac{c}{J} \sqrt{M^2 + T^2} \]
+
+\sectiontitle{Buckling of Columns}
+\noindent
+$P_{cr} = \frac{\pi^2 EI}{L_e^2}, \sigma_{cr} = \frac{\pi^2 E}{(L_e/r)^2}$ \hfill
+\raisebox{-0.5\height}{\scriptsize
+\begin{tabular}{@{}ll@{}}
+\hline
+\textbf{$L_e/L$} & \textbf{Supports} \\ \hline
+1.0 & Pin-Pin \\
+0.5 & Fixed-Fixed \\
+0.7 & Fixed-Pin \\
+2.0 & Fixed-Free \\ \hline
+\end{tabular}}
+
+
+\subsectiontitle{Eccentric Loading}
+{\footnotesize
+\[ y_{\max} = e \left( \sec{\left( \sqrt{\frac{P}{EI}} \frac{L}{2} \right)} - 1 \right) 
+= e \left( \sec{\left( \frac{\pi}{2} \sqrt{\frac{P}{P_{cr}}} \right)} - 1 \right)
+\]
+\[ \sigma_{\max} = \frac{P}{A} \left( 1 + \frac{(y_{\max}+e)c}{r^2} \right) \]
+}
+{\fontsize{4}{\baselineskip}\selectfont
+\[ \sigma_{\max} = \frac{P}{A} \left( 1 + \frac{ec}{r^2} \sec{\left( \frac{\pi}{2} \sqrt{\frac{P}{P_{cr}}} \right)} \right)
+= \frac{P}{A} \left( 1 + \frac{ec}{r^2} \sec{\left( \sqrt{\frac{P}{EI}} \frac{L}{2} \right)} \right)
+\]
+}
+\sectiontitle{Allowable Stress Design Steel}
+\textbf{AB} ($L/r < 4.71\sqrt{E/\sigma_y}$):
+$\sigma_{cr} = \left[0.658^{(\sigma_y/\sigma_e)}\right]\sigma_y$,\quad
+$\sigma_e = \dfrac{\pi^2 E}{(L/r)^2}$\\
+\textbf{BC} ($L/r \geq 4.71\sqrt{E/\sigma_y}$):
+$\sigma_{cr} = 0.877\,\sigma_e$\\
+\textbf{Allowable:} $\sigma_{all} = \dfrac{\sigma_{cr}}{1.67}$
+
+\textbf{Aluminum Alloys ($\sigma_{all}$)}\\
+\textbf{6061-T6:} $L/r<66$: $[20.3-0.127(L/r)]$ ksi $=[140-0.874(L/r)]$ MPa\\
+\phantom{\textbf{6061-T6:}} $L/r\geq66$: $\dfrac{51{,}400}{(L/r)^2}$ ksi $=\dfrac{354\times10^3}{(L/r)^2}$ MPa\\
+\textbf{2014-T6:} $L/r<55$: $[30.9-0.229(L/r)]$ ksi $=[213-1.577(L/r)]$ MPa\\
+\phantom{\textbf{2014-T6:}} $L/r\geq55$: $\dfrac{55{,}400}{(L/r)^2}$ ksi $=\dfrac{382\times10^3}{(L/r)^2}$ MPa
+
+\textbf{Wood (ASD):}
+$\sigma_{all}=\sigma_C C_p$,\quad
+$C_p=\dfrac{1+(\sigma_{CE}/\sigma_C)}{2c}-\sqrt{\left[\dfrac{1+(\sigma_{CE}/\sigma_C)}{2c}\right]^2-\dfrac{\sigma_{CE}/\sigma_C}{c}}$,\quad
+$\sigma_{CE}=\dfrac{0.822E}{(L/d)^2}$\\
+$c=0.8$ (sawn),\ $c=0.9$ (glulam);\quad $L/d\leq50$
+
+\subsectiontitle{Centric Load Design}
+\[ \gamma_D P_D + \gamma_L P_L \leq \phi P_U \]
+$P_U = \sigma_{\text{cr}} A$, $\phi = 0.9$ (Steel)
+
+\subsectiontitle{Eccentric Load Design}
+\[ \sigma = \sigma_{\text{centric}} + \sigma_{\text{bending}} = \frac{P}{A} + \frac{M c}{I} \leq \sigma_{\text{all}} \]
+Interaction Method
+\[ \frac{P/A}{(\sigma_{\text{all}})_{\text{centric}}} + \frac{Mc / I}{(\sigma_{\text{all}})_{\text{bending}}} \le 1 \]
+\[ \frac{P/A}{(\sigma_{\text{all}})_{\text{centric}}} + \frac{|M_x| z_{\text{max}} / I_x}{(\sigma_{\text{all}})_{\text{bending}}} + \frac{|M_z| x_{\text{max}} / I_z}{(\sigma_{\text{all}})_{\text{bending}}} \le 1 \]
 
 \end{multicols*}
 
