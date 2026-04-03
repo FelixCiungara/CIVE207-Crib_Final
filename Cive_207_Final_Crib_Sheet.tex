@@ -676,7 +676,7 @@ $\tan 2\theta_s = -\dfrac{\varepsilon_x - \varepsilon_y}{\gamma_{xy}}$, \quad $\
 \text{$\theta_{p1}$ brings the $x$ face to $\varepsilon_{\max}$ (principal plane)}
 
 
-\columnbreak
+
 
 
 
@@ -814,7 +814,7 @@ $\tan 2\theta_s = -\dfrac{\varepsilon_x - \varepsilon_y}{\gamma_{xy}}$, \quad $\
 \noindent
 \begin{minipage}[t]{0.55\linewidth}
 \centering
-\begin{tikzpicture}[scale=0.22]
+\begin{tikzpicture}[scale=0.12]
 \def\siga{10}\def\sigb{4}
 \pgfmathsetmacro\rA{0.5*\siga}
 \pgfmathsetmacro\rB{0.5*\sigb}
@@ -890,22 +890,22 @@ $\tan 2\theta_s = -\dfrac{\varepsilon_x - \varepsilon_y}{\gamma_{xy}}$, \quad $\
 
 \subsectiontitle{2D \& 3D Shear Sign}
 {\scriptsize
-(+): Face \& arrow both positive or both negative direction\\
-(-): Otherwise\\
+$(+)$: Face \& arrow both positive or both negative direction\\
+$(-)$: Otherwise\\
 }
 \subsectiontitle{Axis Substitution}
-%3 row 2 column table with sample text
+\vspace{-0.5cm}
+{\footnotesize
 \begin{center}
-\renewcommand{\arraystretch}{1.5} % Adjusts row height for better spacing
-\begin{tabular}{@{}l@{\hspace{25pt}}l@{}}
+\begin{tabular}{@{}l@{\hspace{4pt}}l@{}}
 \hline
-\textbf{Stress Plane} & \textbf{Points to Plot} \\ \hline
+\textbf{Stress Plane} & \textbf{Plot} \\ \hline
 $(x,y)$ & \makecell[l]{$(\sigma_x, -\tau_{xy})$ \\ $(\sigma_y, \tau_{xy})$} \\ \hline
 $(y,z)$ & \makecell[l]{$(\sigma_y, -\tau_{yz})$ \\ $(\sigma_z, \tau_{yz})$} \\ \hline
 $(z,x)$ & \makecell[l]{$(\sigma_z, -\tau_{xz})$ \\ $(\sigma_x, \tau_{xz})$} \\ \hline
 \end{tabular}
 \end{center}
-
+}
 
 
 \sectiontitle{Strain Transformations}
@@ -962,12 +962,14 @@ $(z,x)$ & \makecell[l]{$(\sigma_z, -\tau_{xz})$ \\ $(\sigma_x, \tau_{xz})$} \\ \
 \end{tikzpicture}
 \end{center}
 
-\begin{tikzpicture}[remember picture, overlay]
-\node[opacity=1, anchor=north east] (image) at (\linewidth,1.0cm) {\includegraphics[width=1.20in]{image29.png}};
-\node[opacity=1, anchor=north east] (image) at (\linewidth,-1.0cm) {\includegraphics[width=0.80in]{image30.png}};
+\columnbreak
 
+\begin{tikzpicture}[remember picture, overlay]
+\node[opacity=1, anchor=north east] (image) at (\linewidth,1.0cm) {\includegraphics[width=0.80in]{image29.png}};
+\node[opacity=1, anchor=north east] (image) at (\linewidth,-1.0cm) {\includegraphics[width=0.80in]{image30.png}};
 \end{tikzpicture}
-\begin{minipage}{0.95\linewidth}
+
+
 \sectiontitle{Plastic Deformation due to Shear}
 $Px = \frac{3}{2}M_Y\left(1 - \frac{y^2}{3 c^2}\right)$\\
 $x$: distance from free end\\
@@ -976,21 +978,6 @@ $x$: distance from free end\\
 $\tau_{xy} = \frac{3}{2}\frac{V}{A'}\left(1 - \frac{y^2}{y_Y^2}\right)$\\
 $A'$: area of elastic section\\
 $A' = 2by_Y$ for rectangular cross section\\
-
-\end{minipage}
-\vspace{0.5cm}
-\begin{center}
-\includegraphics[width=1in]{image34.png}
-\end{center}
-Tilted cut\\
-Shear at top is 0
-
-
-
-
-\columnbreak
-
-%% COLUMN 3
 
 
 
@@ -1035,22 +1022,38 @@ same principle for centroid
 \includegraphics[width=0.5in]{image33.png}
 \end{center}
 
+\begin{tikzpicture}[remember picture, overlay]
+\node[opacity=1.0, anchor=north east] (image) at (\linewidth,0cm) {\includegraphics[width=0.60in]{image38.png}};
+\end{tikzpicture}
+
 \subsectiontitle{Transmission Shaft Design}
 
-\[ \tau_{\max} = \frac{c}{J} \sqrt{M^2 + T^2} \]
+$\tau_{\max} = \frac{c}{J} \sqrt{M_y^2 + M_z^2 + T^2}$
+
 
 \sectiontitle{Buckling of Columns}
 \noindent
-$P_{cr} = \frac{\pi^2 EI}{L_e^2}, \sigma_{cr} = \frac{\pi^2 E}{(L_e/r)^2}$ \hfill
-\raisebox{-0.5\height}{\scriptsize
-\begin{tabular}{@{}ll@{}}
-\hline
-\textbf{$L_e/L$} & \textbf{Supports} \\ \hline
-1.0 & Pin-Pin \\
-0.5 & Fixed-Fixed \\
-0.7 & Fixed-Pin \\
-2.0 & Fixed-Free \\ \hline
-\end{tabular}}
+\begin{minipage}[c]{0.60\linewidth}
+  %{\small
+  $P_{cr} = \frac{\pi^2 EI}{L_e^2}, \sigma_{cr} = \frac{\pi^2 E}{(L_e/r)^2}$\\[4pt]
+  %}
+  {\footnotesize
+  $r = \sqrt{I/A}$: radius of gyration\\
+  $y_{\max}$ undeterminate for axial load
+  }
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{0.35\linewidth}
+  \raggedleft\scriptsize
+  \raisebox{1pt}[0pt][0pt]{\begin{tabular}{@{}ll@{}}
+  \hline
+  \textbf{$L_e/L$} & \textbf{Supports} \\ \hline
+  1.0 & Pin-Pin \\
+  0.5 & Fixed-Fixed \\
+  0.7 & Fixed-Pin \\
+  2.0 & Fixed-Free \\ \hline
+  \end{tabular}}
+\end{minipage}
 
 
 \subsectiontitle{Eccentric Loading}
@@ -1058,13 +1061,17 @@ $P_{cr} = \frac{\pi^2 EI}{L_e^2}, \sigma_{cr} = \frac{\pi^2 E}{(L_e/r)^2}$ \hfil
 \[ y_{\max} = e \left( \sec{\left( \sqrt{\frac{P}{EI}} \frac{L}{2} \right)} - 1 \right) 
 = e \left( \sec{\left( \frac{\pi}{2} \sqrt{\frac{P}{P_{cr}}} \right)} - 1 \right)
 \]
-\[ \sigma_{\max} = \frac{P}{A} \left( 1 + \frac{(y_{\max}+e)c}{r^2} \right) \]
 }
-{\fontsize{4}{\baselineskip}\selectfont
-\[ \sigma_{\max} = \frac{P}{A} \left( 1 + \frac{ec}{r^2} \sec{\left( \frac{\pi}{2} \sqrt{\frac{P}{P_{cr}}} \right)} \right)
-= \frac{P}{A} \left( 1 + \frac{ec}{r^2} \sec{\left( \sqrt{\frac{P}{EI}} \frac{L}{2} \right)} \right)
+{\footnotesize
+\[
+\begin{aligned}
+  \sigma_{\max} &= \frac{P}{A} \left( 1 + \frac{(y_{\max}+e)c}{r^2} \right)\\
+                &= \frac{P}{A} \left( 1 + \frac{ec}{r^2} \sec{\left( \frac{\pi}{2} \sqrt{\frac{P}{P_{cr}}} \right)} \right)\\
+                &= \frac{P}{A} \left( 1 + \frac{ec}{r^2} \sec{\left( \sqrt{\frac{P}{EI}} \frac{L}{2} \right)} \right)
+\end{aligned}
 \]
 }
+
 \sectiontitle{Allowable Stress Design Steel}
 \textbf{AB} ($L/r < 4.71\sqrt{E/\sigma_y}$):
 $\sigma_{cr} = \left[0.658^{(\sigma_y/\sigma_e)}\right]\sigma_y$,\quad
