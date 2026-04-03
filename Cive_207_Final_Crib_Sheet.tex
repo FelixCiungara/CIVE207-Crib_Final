@@ -319,11 +319,11 @@ $\dfrac{\rho_Y}{c} = \dfrac{\phi_Y}{\phi}$ \quad ($\phi_Y$ = angle when outer st
 
 $\mathcal{A}$: area enclosed by centerline
 
-\sectiontitleOld{Pure Bending}
+\begin{tikzpicture}[remember picture, overlay]
+\node[opacity=0.7, anchor=north east] (image) at (\linewidth,-10pt) {\includegraphics[width=0.8in]{image6.png}};
+\end{tikzpicture}
 
-\begin{center}
-\includegraphics[width=0.8in]{image6.png}
-\end{center}
+\sectiontitleOld{Pure Bending}
 
 \[
 \varepsilon_x = -\frac{y}{\rho}, \varepsilon_{\max} = \frac{c}{\rho}
@@ -352,6 +352,12 @@ $S = \dfrac{I}{c}$ --- section modulus
 
 Rectangle: $S = \dfrac{1}{6}bh^2$
 
+
+
+\begin{tikzpicture}[remember picture, overlay]
+\node[opacity=0.7, anchor=north east] (image) at (\linewidth,-10pt) {\includegraphics[width=0.6in]{image7.png}};
+\end{tikzpicture}
+
 \sectiontitleOld{Curvature}
 
 \[
@@ -363,10 +369,6 @@ Rectangle: $S = \dfrac{1}{6}bh^2$
 \varepsilon_y = \varepsilon_z = -\nu\varepsilon_x = \frac{\nu y}{\rho},
 \frac{1}{\rho'} = \frac{\nu}{\rho}
 \]
-
-\begin{center}
-\includegraphics[width=0.6in]{image7.png}
-\end{center}
 
 
 \sectiontitleOld{Composite Materials}
@@ -540,22 +542,8 @@ $\tan\phi = \frac{y}{z} = \frac{I_z}{I_y}\tan\theta$
 \frac{M_z}{I_z}y - \frac{M_y}{I_y}z = \frac{P}{A}
 \]
 
+\columnbreak
 
-
-
-
-\end{multicols*}
-
-\newpage
-
-%% ============================================================
-%% PAGE 2
-%% ============================================================
-
-\begin{multicols*}{3}
-\raggedcolumns
-
-%% COLUMN 1
 \sectiontitle{Elastic Curve}
 
 \[
@@ -565,10 +553,16 @@ $\tan\phi = \frac{y}{z} = \frac{I_z}{I_y}\tan\theta$
 $M > 0$: sagging\\
 $M < 0$: hogging\\
 Pin/Roller/Journal/Thrust support: $y = 0$, $y' \neq 0$\\
-Fixed support: $y = 0$, \quad $y' = 0$\\
-Free End: $M = EIy'' = 0$, \quad $V = EI y''' = 0$\\
-Segments: $y_1(a) = y_2(a)$, \quad $y_1'(a) = y_2'(a)$\\
-Symmetry: $y(\text{center}) = y_{\max}$, \quad $y'(\text{center}) = 0$\\
+Fixed support: $y = 0$, $y' = 0$\\
+\begin{tabular}{@{}m{0.35\linewidth}m{0.55\linewidth}@{}}
+Free End: & $\left\{\begin{array}{l} M = EIy'' = 0 \\[0pt] V = EIy''' = 0 \end{array}\right.$ \\
+\end{tabular}
+\begin{tabular}{@{}m{0.35\linewidth}m{0.55\linewidth}@{}}
+Segments: & $\left\{\begin{array}{l} y_1(a) = y_2(a) \\[0pt] y_1'(a) = y_2'(a) \end{array}\right.$ \\
+\end{tabular}
+\begin{tabular}{@{}m{0.35\linewidth}m{0.55\linewidth}@{}}
+Symmetry: & $\left\{\begin{array}{l} y(\text{center}) = y_{\max} \\[0pt] y'(\text{center}) = 0 \end{array}\right.$ \\
+\end{tabular}
 Complementary Coordinates:\\
 $x_2 = L - x_1$ \\
 $y_1'(x_1=a) = - y_2'(x_2=L-a)$
@@ -580,8 +574,10 @@ $\tau = \frac{VQ}{It}$ &
 \end{tabular}
 
 
-$V$: shear force, $Q$: first moment of area\\
-$I$: second moment of inertia, $t$: width
+$V$: shear force\\
+$Q$: first moment of area\\
+$I$: second moment of inertia\\
+$t$: width
 
 \subsectiontitle{Narrow Rectangular Beam}
 \vspace{-5pt}
@@ -599,9 +595,11 @@ q = \frac{VQ}{I}
 \subsectiontitle{Force for One Nail}
 \vspace{-2pt}
 \[
-F_{\text{nail}} = \frac{q \cdot s}{n} \quad \text{\scriptsize $\left(\frac{\text{Force}}{\text{Length}} \cdot \frac{\text{Length}}{\text{Nail}} \div \text{rows} = \frac{\text{Force}}{\text{Nail}}\right)$}
+F_{\text{nail}} = \frac{q \cdot s}{n}
 \]
-
+\scriptsize{
+$\left(\frac{\text{Force}}{\text{Length}} \cdot \frac{\text{Length}}{\text{Nail}} \div \text{rows} = \frac{\text{Force}}{\text{Nail}}\right)$
+}
 $s$: spacing between nails \\
 $n$: number of rows of nails
 
@@ -619,6 +617,30 @@ F = \int_A^B q \, ds, \quad V = \int_B^D q \, ds, \quad e = \frac{Fh}{V}
 \raisebox{-.5\height}{\includegraphics[width=1in]{image17.png}} \hspace{10pt} \raisebox{-.5\height}{\includegraphics[width=1in]{image18.png}}
 \end{center}
 \vspace{-5pt}
+
+\subsectiontitle{Composite Section}
+\[ 
+\tau = \frac{VQ_{\text{tr}}}{I_{\text{tr}}t_{\text{actual}}}
+\]
+
+
+\end{multicols*}
+
+\newpage
+
+%% ============================================================
+%% PAGE 2
+%% ============================================================
+
+\begin{multicols*}{3}
+\raggedcolumns
+
+%% COLUMN 1
+
+
+
+
+
 \sectiontitle{Transformations of Plane Stress}
 \vspace{-2pt}
 Let $\sigma_{\text{avg}} = \dfrac{\sigma_x+\sigma_y}{2}$, $R = \sqrt{\left(\dfrac{\sigma_x-\sigma_y}{2}\right)^{\!2}+\tau_{xy}^2}$
@@ -626,14 +648,15 @@ Let $\sigma_{\text{avg}} = \dfrac{\sigma_x+\sigma_y}{2}$, $R = \sqrt{\left(\dfra
 {\footnotesize\begin{align*}
 \sigma_{x'} &= \sigma_{\text{avg}} + \tfrac{\sigma_x-\sigma_y}{2}\cos 2\theta + \tau_{xy}\sin 2\theta \\
 \sigma_{y'} &= \sigma_{\text{avg}} - \tfrac{\sigma_x-\sigma_y}{2}\cos 2\theta - \tau_{xy}\sin 2\theta \\
-\tau_{x'y'} &= -\tfrac{\sigma_x-\sigma_y}{2}\sin 2\theta + \tau_{xy}\cos 2\theta
+\tau_{x'y'} &= -\tfrac{\sigma_x-\sigma_y}{2}\sin 2\theta + \tau_{xy}\cos 2\theta \\
+\sigma_{x'} + \sigma_{y'} &= \sigma_x + \sigma_y
 \end{align*}}
 \vspace{-6pt}
 $\tan 2\theta_p = \dfrac{2\tau_{xy}}{\sigma_x - \sigma_y}$, \quad $\sigma_{\max,\min} = \sigma_{\text{avg}} \pm R$\\[3pt]
 \\[1pt]
 $\tan 2\theta_s = -\dfrac{\sigma_x - \sigma_y}{2\tau_{xy}}$, \quad $\tau_{\max} = R$, \quad $\sigma' = \sigma_{\text{avg}}$
 \\[3pt]
-\text{$\theta_{p1}$ brings the $x$ face to $\sigma_{\max}$}
+\text{$\theta_{p1}$ brings the $x$ face to $\sigma_{\max}$ (principal plane)}
 
 \sectiontitle{Transformations of Plane Strain}
 \vspace{-2pt}
@@ -642,14 +665,15 @@ Let $\varepsilon_{\text{avg}} = \dfrac{\varepsilon_x+\varepsilon_y}{2}$, $R = \s
 {\footnotesize\begin{align*}
 \varepsilon_{x'} &= \varepsilon_{\text{avg}} + \tfrac{\varepsilon_x-\varepsilon_y}{2}\cos 2\theta + \tfrac{\gamma_{xy}}{2}\sin 2\theta \\
 \varepsilon_{y'} &= \varepsilon_{\text{avg}} - \tfrac{\varepsilon_x-\varepsilon_y}{2}\cos 2\theta - \tfrac{\gamma_{xy}}{2}\sin 2\theta \\
-\tfrac{\gamma_{x'y'}}{2} &= -\tfrac{\varepsilon_x-\varepsilon_y}{2}\sin 2\theta + \tfrac{\gamma_{xy}}{2}\cos 2\theta
+\tfrac{\gamma_{x'y'}}{2} &= -\tfrac{\varepsilon_x-\varepsilon_y}{2}\sin 2\theta + \tfrac{\gamma_{xy}}{2}\cos 2\theta \\
+\varepsilon_{x'} + \varepsilon_{y'} &= \varepsilon_x + \varepsilon_y
 \end{align*}}
 \vspace{-6pt}
 $\tan 2\theta_p = \dfrac{\gamma_{xy}}{\varepsilon_x - \varepsilon_y}$, \quad $\varepsilon_{\max,\min} = \varepsilon_{\text{avg}} \pm R$\\[3pt]
 \\[1pt]
 $\tan 2\theta_s = -\dfrac{\varepsilon_x - \varepsilon_y}{\gamma_{xy}}$, \quad $\tfrac{\gamma_{\max}}{2} = R$, \quad $\varepsilon' = \varepsilon_{\text{avg}}$
 \\[3pt]
-\text{$\theta_{p1}$ brings the $x$ face to $\varepsilon_{\max}$}
+\text{$\theta_{p1}$ brings the $x$ face to $\varepsilon_{\max}$ (principal plane)}
 
 
 \columnbreak
