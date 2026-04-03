@@ -262,20 +262,24 @@ R_T = \frac{T_U c}{J}
 \vspace{-4pt}
 \sectiontitleOld{Plastic Torsion}
 \subsectiontitleOld{Not Yield}
-\[\tau = \frac{T\rho}{J}\]
+\[T = \frac{J}{c}\,\tau_{\max}\]
 \subsectiontitleOld{Yield}
 \[
-T_Y = \frac{J}{c}\,\tau_y
+T_Y = \frac{J}{c}\,\tau_y = \frac{\pi}{2}\,c^3 \tau_Y
 \]
 
-{\footnotesize\begin{tabular}{@{}p{0.3\linewidth}p{0.6\linewidth}@{}}
+{\footnotesize\begin{tabular}{@{}p{0.4\linewidth}p{0.5\linewidth}@{}}
 $0 \le \rho \le \rho_Y$: & $\rho_Y \le \rho \le c$: \\[3pt]
 {\scriptsize$\tau = \dfrac{\tau_Y}{\rho_Y}\rho$} &
 {\scriptsize$\tau = \tau_Y$} \\[6pt]
 \end{tabular}}
 
-$T = \dfrac{4}{3}T_Y\left(1 - \dfrac{1}{4}\dfrac{\rho_Y^3}{c^3}\right)$\\
-$T = \dfrac{4}{3}T_Y\left(1 - \dfrac{1}{4}\dfrac{\rho_Y^3}{c^3}\right)$\\
+{\footnotesize\[
+T = \iint \rho\,\tau\,dA = 2\pi\int_{a}^{b}\tau\,\rho^2\,d\rho
+\]}
+
+$T_{E-P} = \dfrac{4}{3}T_Y\left(1 - \dfrac{1}{4}\dfrac{\rho_Y^3}{c^3}\right)$\\
+$\phi = \frac{\gamma_Y L}{\rho_Y} = \frac{\tau_Y L}{\rho_Y G}$\\
 $T_P = \dfrac{4}{3}T_Y$
 
 
@@ -292,20 +296,12 @@ $\dfrac{\rho_Y}{c} = \dfrac{\phi_Y}{\phi}$ \quad ($\phi_Y$ = angle when outer st
 
 \sectiontitleOld{Hollow Cylinder (Elasto-Plastic)}
 
-{\footnotesize\[
-T = \iint \rho\,\tau\,dA = 2\pi\int_{a}^{b}\tau\,\rho^2\,d\rho
-\]}
-\[
-T_e = \frac{\tau_{\max} J}{c}
-\]
 
-{\footnotesize\[
-T_{e\text{-}p} = 2\pi\tau_Y\!\left(\dfrac{b^3}{3} - \dfrac{a^4}{4\rho_Y} - \dfrac{\rho_Y^3}{12}\right)
-\]}
 
-\[
-T_p = \frac{2}{3}\pi\tau_Y\!\left(b^3 - a^3\right)
-\]
+
+
+
+
 
 \subsectiontitleOld{Residual Shear Strain}
 {\footnotesize\[
@@ -432,36 +428,39 @@ R_B = \frac{M_U c}{I}
 
 \vspace{4pt}
 \sectiontitleOld{Plastic Bending}
+\subsectiontitleOld{Not Yield}à
+\vspace{-10pt}
 
+\[ T = \frac{\sigma_{\max} I}{c} \]
+
+\subsectiontitleOld{Yield}
+\vspace{-10pt}
 {\footnotesize\[
 M_Y = \frac{I}{c}\,\sigma_Y
 \]}
 
-{\footnotesize\begin{tabular}{@{}p{0.28\linewidth}p{0.68\linewidth}@{}}
+{\footnotesize\begin{tabular}{@{}p{0.4\linewidth}p{0.5\linewidth}@{}}
 $0 \le |y| \le y_Y$: &
 $y_Y \le |y| \le c$: \\[3pt]
 $\sigma = -\dfrac{\sigma_Y}{y_Y}y$ &
-$M = \dfrac{3}{2}M_Y\!\left(1 - \dfrac{y_Y^2}{3c^2}\right)$ \\[6pt]
- & $M_P = \dfrac{3}{2}M_Y$
+$\sigma = \sigma_Y$ 
 \end{tabular}}
+
+{\footnotesize\[
+M = \iint y\,\sigma\,dA = 2b\int_0^c \sigma\,y\,dy
+\]
+
+$M_{E-P} = \frac{3}{2} M_Y \left(1 - \dfrac{y_Y^2}{3c^2}\right)$\\
+$M_P = \dfrac{3}{2}M_Y$
+}
 \vspace{2pt}
 \hrule height 0.3pt
 \vspace{2pt}
 
-{\footnotesize\[
-M = \iint y\,\sigma\,dA = 2b\int_0^c \sigma\,y\,dy
-\]}
-
-{\footnotesize\begin{tabular}{@{}l@{\hspace{2pt}}l@{}}
-$M_e = \dfrac{\sigma_{\max} I}{c}$ & (elastic) \\[6pt]
-$M_{e\text{-}p} = b\sigma_y\!\left(c^2 - \dfrac{1}{3}y_y^2\right)$ & (elasto-plastic) \\[6pt]
-$M_p = b\sigma_y c^2$ & (fully plastic)
+{\footnotesize\begin{tabular}{@{}m{0.45\linewidth}m{0.45\linewidth}@{}}
+$Z = \dfrac{M_p}{\sigma_Y}$ & (plastic section modulus) \\[8pt]
+$k = \dfrac{M_p}{M_Y} = \dfrac{Z}{S}$ & (shape factor)
 \end{tabular}}
-
-\vspace{2pt}
-$Z = \dfrac{M_p}{\sigma_Y}$ \quad (plastic section modulus)
-
-$k = \dfrac{M_p}{M_Y} = \dfrac{Z}{S}$ (shape factor)
 
 \begin{center}
 \includegraphics[width=1.5in]{image9.png}
@@ -993,7 +992,7 @@ Shear at top is 0
 \]
 \end{minipage}};
 \end{tikzpicture}
-\vspace{1cm}
+\vspace{-0.5cm}
 \begin{center}
 \includegraphics[width=0.5in]{image31.png}
 \end{center}
