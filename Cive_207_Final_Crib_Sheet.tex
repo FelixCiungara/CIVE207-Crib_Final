@@ -428,7 +428,7 @@ R_B = \frac{M_U c}{I}
 
 \vspace{4pt}
 \sectiontitleOld{Plastic Bending}
-\subsectiontitleOld{Not Yield}à
+\subsectiontitleOld{Not Yield}
 \vspace{-10pt}
 
 \[ T = \frac{\sigma_{\max} I}{c} \]
@@ -436,7 +436,7 @@ R_B = \frac{M_U c}{I}
 \subsectiontitleOld{Yield}
 \vspace{-10pt}
 {\footnotesize\[
-M_Y = \frac{I}{c}\,\sigma_Y
+M_Y = \frac{I}{c}\,\sigma_Y = \frac{2}{3}bc^2 \sigma_Y
 \]}
 
 {\footnotesize\begin{tabular}{@{}p{0.4\linewidth}p{0.5\linewidth}@{}}
@@ -451,8 +451,17 @@ M = \iint y\,\sigma\,dA = 2b\int_0^c \sigma\,y\,dy
 \]
 
 $M_{E-P} = \frac{3}{2} M_Y \left(1 - \dfrac{y_Y^2}{3c^2}\right)$\\
+$\frac{1}{\rho} = \frac{\varepsilon_Y}{y_Y}$\\
 $M_P = \dfrac{3}{2}M_Y$
 }
+
+\subsectiontitleOld{Residual Curvature}
+
+{\footnotesize\[
+\frac{1}{\rho_r} = \frac{1}{\rho} - \frac{1}{\rho'} 
+= \frac{\varepsilon_Y}{y_Y} - \frac{M}{EI}
+\]}
+
 \vspace{2pt}
 \hrule height 0.3pt
 \vspace{2pt}
@@ -467,6 +476,13 @@ $k = \dfrac{M_p}{M_Y} = \dfrac{Z}{S}$ & (shape factor)
 \end{center}
 
 \vspace{4pt}
+
+
+\begin{tikzpicture}[remember picture, overlay]
+\node[opacity=0.7, anchor=north west] (image) at (0,-1.0cm) {\includegraphics[width=0.50in]{image35.png}};
+\node[opacity=0.7, anchor=north east] (image) at (\linewidth,-1.0cm) {\includegraphics[width=0.50in]{image36.png}};
+\end{tikzpicture}
+
 \sectiontitleOld{Unsymmetric Cross-Section (Plastic)}
 
 For non-symmetric sections, neutral axis $\neq$ centroidal axis.
@@ -474,15 +490,22 @@ For non-symmetric sections, neutral axis $\neq$ centroidal axis.
 \vspace{2pt}
 Neutral axis divides cross-section into \textbf{equal areas}.
 
-\begin{tabular}{@{}l@{\hspace{18pt}}l@{}}
-$M_p = \left(\dfrac{1}{2}A\sigma_Y\right)d$ &
-\raisebox{-0.4\height}{\includegraphics[width=0.5in]{image10.png}}
-\end{tabular}
+{\footnotesize
+$M_p = \left(\dfrac{1}{2}A\sigma_Y\right)d$
+}
+
 
 \vspace{2pt}
 $d$: distance between tension/compression centroids
 
 \vspace{4pt}
+
+\begin{tikzpicture}[remember picture, overlay]
+\node[opacity=0.7, anchor=north east] (image) at (\linewidth+0.5cm,-10pt) {\includegraphics[width=1.0in]{image12.png}};
+\node[opacity=0.7, anchor=north east] (image) at (\linewidth,-3cm) {\includegraphics[width=1.0in]{image11.png}};
+\node[opacity=0.7, anchor=north east] (image) at (\linewidth,-5cm) {\includegraphics[width=1.0in]{image37.png}};
+\end{tikzpicture}
+
 \sectiontitleOld{Unsymmetric Bending}
 
 Resolve moment into principal axes:
@@ -496,9 +519,7 @@ Superpose stress distributions:
 \]
 
 
-\begin{tikzpicture}[remember picture, overlay]
-\node[opacity=0.7, anchor=north east] (image) at (\linewidth+1cm,1.5cm) {\includegraphics[width=1.0in]{image12.png}};
-\end{tikzpicture}
+
 \begin{minipage}{0.95\linewidth}
 \subsectiontitleOld{Neutral axis orientation}
 
@@ -519,22 +540,8 @@ $\tan\phi = \frac{y}{z} = \frac{I_z}{I_y}\tan\theta$
 \frac{M_z}{I_z}y - \frac{M_y}{I_y}z = \frac{P}{A}
 \]
 
-\begin{center}
-\includegraphics[width=1.2in]{image11.png}
-\end{center}
 
-\begin{center}
-\includegraphics[width=\linewidth]{image13.png}
-\end{center}
 
-\begin{center}
-\includegraphics[width=\linewidth]{image14.png}
-\end{center}
-
-\sectiontitleOld{NEW -- Residual Curvature}
-\[\frac{1}{\rho_{plastic}} = \frac{\varepsilon_{x,Yield}}{y_{Yield}}\]
-\[\frac{1}{\rho_{unload}} = \frac{M}{EI}\]
-\[\frac{1}{\rho_r} = \frac{1}{\rho_{plastic}} - \frac{1}{\rho_{unload}}\]
 
 
 \end{multicols*}
