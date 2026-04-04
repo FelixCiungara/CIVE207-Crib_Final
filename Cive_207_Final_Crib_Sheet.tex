@@ -283,18 +283,82 @@ $\phi = \frac{\gamma_Y L}{\rho_Y} = \frac{\tau_Y L}{\rho_Y G}$\\
 $T_P = \dfrac{4}{3}T_Y$
 
 
-$\dfrac{\rho_Y}{c} = \dfrac{\phi_Y}{\phi}$ \quad ($\phi_Y$ = angle when outer starts yielding)
+$\dfrac{\rho_Y}{c} = \dfrac{\phi_Y}{\phi}$ \\
+{\footnotesize $\phi_Y$ = angle when outer starts yielding}
+
+
+
+
+
+\begin{tikzpicture}[>={Stealth[length=1.5pt, width=1pt]}, scale=0.28, font=\tiny]
+\definecolor{shaftblue}{RGB}{220, 235, 245}
+\definecolor{stressred}{RGB}{220, 50, 50}
+\tikzset{stress arrow/.style={->, stressred, very thin}}
+% Figure (a): Loading
+\begin{scope}[shift={(0,0)}]
+    \fill[shaftblue] (0,0) circle (1.5);
+    \draw[dashed, blue!50!black, very thin] (0,0) circle (0.8);
+    \draw[->, very thin] (0,0) -- (1.8,0) node[right] {$\rho$};
+    \draw[->, very thin] (0,0) -- (0,1.8) node[left] {$\tau$};
+    \draw[stressred, thick] (0,0) -- (0.8,1.2) -- (1.5,1.2);
+    \foreach \x in {0.2, 0.4, 0.6, 0.8, 1.0, 1.25, 1.5} {
+        \draw[stress arrow] (\x, {\x <= 0.8 ? 1.5*\x : 1.2}) -- (\x,0);
+    }
+    \node[stressred] at (1.65, 1.2) {$\tau_Y$};
+    \draw[<->, very thin] (0,1.5) -- (0.8,1.5) node[midway, above] {$\rho_Y$};
+    \node at (1.5,-0.3) {$c$};
+    \node at (0.75, -2.2) {(a)};
+\end{scope}
+%\node at (3.5, 0) {\scriptsize \bfseries \textcolor{stressred}{+}};
+% Figure (b): Elastic Unloading
+\begin{scope}[shift={(4.5,0)}]
+    \fill[shaftblue] (0,0) circle (1.5);
+    \draw[dashed, blue!50!black, very thin] (0,0) circle (0.8);
+    \draw[->, very thin] (0,0) -- (1.8,0) node[right] {$\rho$};
+    \draw[->, very thin] (0,0) -- (0,1.8) node[left] {$\tau$};
+    \draw[stressred, thick] (0,0) -- (1.5,-1.6);
+    \foreach \x in {0.3, 0.6, 0.9, 1.2, 1.5} {
+        \draw[stress arrow] (\x, -1.066*\x) -- (\x,0);
+    }
+    \node[stressred, anchor=north] at (1.5, -1.6) {$\tau'_m$};
+    \node at (1.5, 0.3) {$c$};
+    \node at (0.75, -2.2) {(b)};
+\end{scope}
+%\node at (10.5, 0) {\scriptsize \bfseries \textcolor{stressred}{=}};
+% Figure (c): Residual Stress
+\begin{scope}[shift={(9,0)}]
+    \fill[shaftblue] (0,0) circle (1.5);
+    \draw[dashed, blue!50!black, very thin] (0,0) circle (0.8);
+    \draw[->, very thin] (0,0) -- (1.8,0) node[right] {$\rho$};
+    \draw[->, very thin] (0,0) -- (0,1.8) node[left] {$\tau$};
+    \draw[stressred, thick] (0,0) -- (0.8, 0.6) -- (1.5, -0.4);
+    \foreach \x in {0.2, 0.4, 0.6, 0.8} {
+        \draw[stress arrow] (\x, 0.75*\x) -- (\x,0);
+    }
+    \foreach \x in {1.0, 1.2, 1.5} {
+        \pgfmathsetmacro{\yval}{0.6 - (\x-0.8)*1.42}
+        \ifdim \yval pt > 0pt
+            \draw[stress arrow] (\x, \yval) -- (\x,0);
+        \else
+            \draw[stress arrow] (\x, 0) -- (\x, \yval);
+        \fi
+    }
+    \draw[dashed, very thin] (0.8, 0.6) -- (0.8, 1.5);
+    \draw[<->, very thin] (0,1.5) -- (0.8,1.5) node[midway, above] {$\rho_Y$};
+    \node at (1.5, 0.3) {$c$};
+    \node at (0.75, -2.2) {(c)};
+\end{scope}
+\end{tikzpicture}
 
 \vspace{-4pt}
-\sectiontitleOld{Torsion --- Rectangular Cross-Section}
-\vspace{-10pt}
+\sectiontitleOld{Torsion Rectangular}
+\vspace{-9pt}
 \[
 \tau_{\max} = \frac{T}{c_1 a b^2} \qquad \phi = \frac{TL}{c_2 a b^3 G}
 \]
 
 \columnbreak
 
-\sectiontitleOld{Hollow Cylinder (Elasto-Plastic)}
 
 
 
@@ -458,7 +522,6 @@ $M_P = \dfrac{3}{2}M_Y$
 }
 
 \subsectiontitleOld{Residual Curvature}
-
 {\footnotesize\[
 \frac{1}{\rho_r} = \frac{1}{\rho} - \frac{1}{\rho'} 
 = \frac{\varepsilon_Y}{y_Y} - \frac{M}{EI}
@@ -485,6 +548,7 @@ $k = \dfrac{M_p}{M_Y} = \dfrac{Z}{S}$ & (shape factor)
 \node[opacity=0.7, anchor=north east] (image) at (\linewidth,-1.0cm) {\includegraphics[width=0.50in]{image36.png}};
 \end{tikzpicture}
 
+\vspace{-1cm}
 \sectiontitleOld{Unsymmetric Cross-Section (Plastic)}
 
 For non-symmetric sections, neutral axis $\neq$ centroidal axis.
@@ -995,10 +1059,10 @@ $A' = 2by_Y$ for rectangular cross section\\
 
 
 \sectiontitle{Strain Rosette}
-\begin{tikzpicture}
-\node[opacity=0.7, anchor=center] (image) at (0,0) {\includegraphics[width=0.80\linewidth]{image25.png}};
-\node[inner sep=0pt] (content) {%
-\begin{minipage}{0.95\linewidth}
+\begin{tikzpicture}[remember picture, overlay]
+\node[opacity=0.7, anchor=north] (image) at (0.5\linewidth,0) {\includegraphics[width=0.60\linewidth]{image25.png}};
+\end{tikzpicture}
+
 \[
 \varepsilon_1 = \varepsilon_x \cos^2\theta_1 + \varepsilon_y \sin^2\theta_1 + \frac{\gamma_{xy}}{2}\sin 2\theta_1
 \]
@@ -1008,19 +1072,14 @@ $A' = 2by_Y$ for rectangular cross section\\
 \[
 \varepsilon_3 = \varepsilon_x \cos^2\theta_3 + \varepsilon_y \sin^2\theta_3 + \frac{\gamma_{xy}}{2}\sin 2\theta_3
 \]
-\end{minipage}};
-\end{tikzpicture}
+
+
 \vspace{-0.5cm}
 \begin{center}
-\includegraphics[width=0.5in]{image31.png}
+\includegraphics[width=2.0in]{image31.png}
 \end{center}
 same principle for centroid
-\begin{center}
-\includegraphics[width=0.5in]{image32.png}
-\end{center}
-\begin{center}
-\includegraphics[width=0.5in]{image33.png}
-\end{center}
+
 
 \begin{tikzpicture}[remember picture, overlay]
 \node[opacity=1.0, anchor=north east] (image) at (\linewidth,0cm) {\includegraphics[width=0.60in]{image38.png}};
@@ -1072,6 +1131,13 @@ $\tau_{\max} = \frac{c}{J} \sqrt{M_y^2 + M_z^2 + T^2}$
 \]
 }
 
+\begin{tikzpicture}[remember picture, overlay]
+\node[opacity=1.0, anchor=north east] (image) at (\linewidth,-0.4cm) {\includegraphics[width=1in]{image39.png}};
+\node[opacity=1.0, anchor=north east] (image) at (\linewidth,-2.4cm) {\includegraphics[width=1in]{image40.png}};
+\node[opacity=1.0, anchor=north east] (image) at (\linewidth,-4.4cm) {\includegraphics[width=1in]{image41.png}};
+
+\end{tikzpicture}
+
 \sectiontitle{Allowable Stress Design Steel}
 \textbf{AB} ($L/r < 4.71\sqrt{E/\sigma_y}$):
 $\sigma_{cr} = \left[0.658^{(\sigma_y/\sigma_e)}\right]\sigma_y$,\quad
@@ -1086,11 +1152,16 @@ $\sigma_{cr} = 0.877\,\sigma_e$\\
 \textbf{2014-T6:} $L/r<55$: $[30.9-0.229(L/r)]$ ksi $=[213-1.577(L/r)]$ MPa\\
 \phantom{\textbf{2014-T6:}} $L/r\geq55$: $\dfrac{55{,}400}{(L/r)^2}$ ksi $=\dfrac{382\times10^3}{(L/r)^2}$ MPa
 
+\columnbreak
+
 \textbf{Wood (ASD):}
-$\sigma_{all}=\sigma_C C_p$,\quad
-$C_p=\dfrac{1+(\sigma_{CE}/\sigma_C)}{2c}-\sqrt{\left[\dfrac{1+(\sigma_{CE}/\sigma_C)}{2c}\right]^2-\dfrac{\sigma_{CE}/\sigma_C}{c}}$,\quad
+$\sigma_{all}=\sigma_C C_p$,\\
+{\small
+$C_p=\dfrac{1+(\sigma_{CE}/\sigma_C)}{2c}-\sqrt{\left[\dfrac{1+(\sigma_{CE}/\sigma_C)}{2c}\right]^2-\dfrac{\sigma_{CE}/\sigma_C}{c}}$
+}
 $\sigma_{CE}=\dfrac{0.822E}{(L/d)^2}$\\
-$c=0.8$ (sawn),\ $c=0.9$ (glulam);\quad $L/d\leq50$
+$c=0.8$ (sawn),\ $c=0.9$ (glued laminated wood)\\
+$L/d\leq50$
 
 \subsectiontitle{Centric Load Design}
 \[ \gamma_D P_D + \gamma_L P_L \leq \phi P_U \]
@@ -1098,8 +1169,7 @@ $P_U = \sigma_{\text{cr}} A$, $\phi = 0.9$ (Steel)
 
 \subsectiontitle{Eccentric Load Design}
 \[ \sigma = \sigma_{\text{centric}} + \sigma_{\text{bending}} = \frac{P}{A} + \frac{M c}{I} \leq \sigma_{\text{all}} \]
-Interaction Method
-\[ \frac{P/A}{(\sigma_{\text{all}})_{\text{centric}}} + \frac{Mc / I}{(\sigma_{\text{all}})_{\text{bending}}} \le 1 \]
+\subsectiontitle{Interaction Method}
 \[ \frac{P/A}{(\sigma_{\text{all}})_{\text{centric}}} + \frac{|M_x| z_{\text{max}} / I_x}{(\sigma_{\text{all}})_{\text{bending}}} + \frac{|M_z| x_{\text{max}} / I_z}{(\sigma_{\text{all}})_{\text{bending}}} \le 1 \]
 
 \end{multicols*}
