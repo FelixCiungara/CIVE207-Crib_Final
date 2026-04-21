@@ -666,10 +666,10 @@ $theta_(p 1)$ brings the $x$ face to $epsilon_"max"$ (principal plane)
     // Angle arcs
     let psi = calc.atan2(-tauxy, sigmad).deg()
     arc((sigmam, 0), start: psi, stop: 0, radius: 0.52 * r, mark: (end: "stealth"), stroke: 0.8pt)
-    content((sigmam + 0.52 * r * calc.cos(calc.torad((psi + 0) / 2)), 0.52 * r * calc.sin(calc.torad((psi + 0) / 2))),
+    content((sigmam + 0.52 * r * calc.cos((((psi + 0) * calc.pi / 180) / 2)), 0.52 * r * calc.sin((((psi + 0) * calc.pi / 180) / 2))),
       text(size: 5pt)[$2theta_(p 1)$], anchor: "north-west")
     arc((sigmam, 0), start: psi, stop: 90, radius: 0.33 * r, mark: (end: "stealth"), stroke: 0.8pt)
-    content((sigmam + 0.33 * r * calc.cos(calc.torad((psi + 90) / 2)), 0.33 * r * calc.sin(calc.torad((psi + 90) / 2))),
+    content((sigmam + 0.33 * r * calc.cos((((psi + 90) * calc.pi / 180) / 2)), 0.33 * r * calc.sin((((psi + 90) * calc.pi / 180) / 2))),
       text(size: 5pt)[$2theta_(s 1)$], anchor: "south-west")
   })
 ]
@@ -838,10 +838,10 @@ $theta_(p 1)$ brings the $x$ face to $epsilon_"max"$ (principal plane)
     // Angle arcs
     let psi = calc.atan2(-gxy, ediff).deg()
     arc((eavg, 0), start: psi, stop: 0, radius: 0.52 * r, mark: (end: "stealth"), stroke: 0.8pt)
-    content((eavg + 0.52 * r * calc.cos(calc.torad((psi) / 2)), 0.52 * r * calc.sin(calc.torad((psi) / 2))),
+    content((eavg + 0.52 * r * calc.cos((((psi) * calc.pi / 180) / 2)), 0.52 * r * calc.sin((((psi) * calc.pi / 180) / 2))),
       text(size: 5pt)[$2theta_(p 1)$], anchor: "north-west")
     arc((eavg, 0), start: psi, stop: 90, radius: 0.33 * r, mark: (end: "stealth"), stroke: 0.8pt)
-    content((eavg + 0.33 * r * calc.cos(calc.torad((psi + 90) / 2)), 0.33 * r * calc.sin(calc.torad((psi + 90) / 2))),
+    content((eavg + 0.33 * r * calc.cos((((psi + 90) * calc.pi / 180) / 2)), 0.33 * r * calc.sin((((psi + 90) * calc.pi / 180) / 2))),
       text(size: 5pt)[$2theta_(s 1)$], anchor: "south-west")
   })
 ]
