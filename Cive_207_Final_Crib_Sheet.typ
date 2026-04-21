@@ -664,12 +664,12 @@ $theta_(p 1)$ brings the $x$ face to $epsilon_"max"$ (principal plane)
     content((sigmam, -r - 0.3), text(size: 5pt)[$tau_"min"$], anchor: "north")
 
     // Angle arcs
-    let psi = calc.atan2(-tauxy, sigmad).deg()
-    arc((sigmam, 0), start: psi, stop: 0, radius: 0.52 * r, mark: (end: "stealth"), stroke: 0.8pt)
-    content((sigmam + 0.52 * r * calc.cos((((psi + 0) * calc.pi / 180) / 2)), 0.52 * r * calc.sin((((psi + 0) * calc.pi / 180) / 2))),
+    let psi = calc.atan2(-tauxy, sigmad)
+    arc((sigmam, 0), start: psi, stop: 0deg, radius: 0.52 * r, mark: (end: "stealth"), stroke: 0.8pt)
+    content((sigmam + 0.52 * r * calc.cos(psi / 2), 0.52 * r * calc.sin(psi / 2)),
       text(size: 5pt)[$2theta_(p 1)$], anchor: "north-west")
-    arc((sigmam, 0), start: psi, stop: 90, radius: 0.33 * r, mark: (end: "stealth"), stroke: 0.8pt)
-    content((sigmam + 0.33 * r * calc.cos((((psi + 90) * calc.pi / 180) / 2)), 0.33 * r * calc.sin((((psi + 90) * calc.pi / 180) / 2))),
+    arc((sigmam, 0), start: psi, stop: 90deg, radius: 0.33 * r, mark: (end: "stealth"), stroke: 0.8pt)
+    content((sigmam + 0.33 * r * calc.cos((psi + 90deg) / 2), 0.33 * r * calc.sin((psi + 90deg) / 2)),
       text(size: 5pt)[$2theta_(s 1)$], anchor: "south-west")
   })
 ]
@@ -836,12 +836,12 @@ $theta_(p 1)$ brings the $x$ face to $epsilon_"max"$ (principal plane)
     content((eavg, -r - 0.3), text(size: 5pt)[$gamma_"min"\/2$], anchor: "north")
 
     // Angle arcs
-    let psi = calc.atan2(-gxy, ediff).deg()
-    arc((eavg, 0), start: psi, stop: 0, radius: 0.52 * r, mark: (end: "stealth"), stroke: 0.8pt)
-    content((eavg + 0.52 * r * calc.cos((((psi) * calc.pi / 180) / 2)), 0.52 * r * calc.sin((((psi) * calc.pi / 180) / 2))),
+    let psi = calc.atan2(-gxy, ediff)
+    arc((eavg, 0), start: psi, stop: 0deg, radius: 0.52 * r, mark: (end: "stealth"), stroke: 0.8pt)
+    content((eavg + 0.52 * r * calc.cos(psi / 2), 0.52 * r * calc.sin(psi / 2)),
       text(size: 5pt)[$2theta_(p 1)$], anchor: "north-west")
-    arc((eavg, 0), start: psi, stop: 90, radius: 0.33 * r, mark: (end: "stealth"), stroke: 0.8pt)
-    content((eavg + 0.33 * r * calc.cos((((psi + 90) * calc.pi / 180) / 2)), 0.33 * r * calc.sin((((psi + 90) * calc.pi / 180) / 2))),
+    arc((eavg, 0), start: psi, stop: 90deg, radius: 0.33 * r, mark: (end: "stealth"), stroke: 0.8pt)
+    content((eavg + 0.33 * r * calc.cos((psi + 90deg) / 2), 0.33 * r * calc.sin((psi + 90deg) / 2)),
       text(size: 5pt)[$2theta_(s 1)$], anchor: "south-west")
   })
 ]
