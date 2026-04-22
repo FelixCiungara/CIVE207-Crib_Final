@@ -877,7 +877,7 @@ $\tan 2\theta_s = -\dfrac{\varepsilon_x - \varepsilon_y}{\gamma_{xy}}$, \quad $\
 \end{tikzpicture}
 \end{center}
 
-\vspace{-20pt}
+\vspace{-10pt}
 
 \noindent
 \begin{minipage}[t]{0.55\linewidth}
@@ -949,8 +949,6 @@ $\tan 2\theta_s = -\dfrac{\varepsilon_x - \varepsilon_y}{\gamma_{xy}}$, \quad $\
 % tau_abs_max dot and label (now at top of largest circle)
 \filldraw[black](\cAB,\rAB) circle(0.18)
   node[anchor=south,font=\tiny]{$\tau_{\text{abs,max}}$};
-% Label above diagram
-\node[anchor=south,font=\tiny] at (\cAB,\h+12.0cm) {One $\sigma$ compressive};
 % Mark sigma=0 axis crossing note
 % (0 already labeled as \sigma_2)
 \end{tikzpicture}
@@ -987,7 +985,7 @@ $(z,x)$ & \makecell[l]{$(\sigma_z, -\tau_{xz})$ \\ $(\sigma_x, \tau_{xz})$} \\ \
 \pgfmathsetmacro\epsavg{0.5*(\epsxval+\epsyval)}
 \pgfmathsetmacro\epsdiff{0.5*(\epsxval-\epsyval)}
 \pgfmathsetmacro\r{sqrt((\epsdiff)^2+(\gammaxyval)^2)}
-\def\s{0.5}\def\xoff{3}
+\def\s{0.5}\def\xoff{6}
 \pgfmathsetmacro\w{\epsavg+\r+\s}
 \pgfmathsetmacro\h{\r+\s}
 % Axes
@@ -1135,12 +1133,6 @@ $\tau_{\max} = \frac{c}{J} \sqrt{M_y^2 + M_z^2 + T^2}$
 \]
 }
 
-\begin{tikzpicture}[remember picture, overlay]
-\node[opacity=1.0, anchor=north east] (image) at (\linewidth,-0.4cm) {\includegraphics[width=1in]{image39.png}};
-\node[opacity=1.0, anchor=north east] (image) at (\linewidth,-2.4cm) {\includegraphics[width=1in]{image40.png}};
-\node[opacity=1.0, anchor=north east] (image) at (\linewidth,-4.4cm) {\includegraphics[width=1in]{image41.png}};
-
-\end{tikzpicture}
 
 \sectiontitle{Allowable Stress Design Steel}
 \textbf{AB} ($L/r < 4.71\sqrt{E/\sigma_y}$):
@@ -1155,6 +1147,11 @@ $\sigma_{cr} = 0.877\,\sigma_e$\\
 \phantom{\textbf{6061-T6:}} $L/r\geq66$: $\dfrac{51{,}400}{(L/r)^2}$ ksi $=\dfrac{354\times10^3}{(L/r)^2}$ MPa\\
 \textbf{2014-T6:} $L/r<55$: $[30.9-0.229(L/r)]$ ksi $=[213-1.577(L/r)]$ MPa\\
 \phantom{\textbf{2014-T6:}} $L/r\geq55$: $\dfrac{55{,}400}{(L/r)^2}$ ksi $=\dfrac{382\times10^3}{(L/r)^2}$ MPa
+
+\noindent
+\begin{minipage}[t]{0.333\linewidth}\centering\textbf{Steel}\\\includegraphics[width=\linewidth]{image39.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.333\linewidth}\centering\textbf{Alum.}\\\includegraphics[width=\linewidth]{image40.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.333\linewidth}\centering\textbf{Wood}\\\includegraphics[width=\linewidth]{image41.png}\end{minipage}
 
 \columnbreak
 
